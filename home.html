@@ -1,0 +1,268 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sedimentation Tank Designer — Input</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --navy: #001826;
+      --accent: #007bff;
+      --muted: #a9c4e2;
+      --card-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(160deg, #000d1a, #001826);
+      color: #fff;
+    }
+
+    header {
+      background: rgba(0, 12, 24, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 18px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--card-shadow);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      background: var(--accent);
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.2em;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+    }
+
+    h1 {
+      font-size: 1.4em;
+      margin: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.9em;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 40px;
+      min-height: calc(100vh - 160px);
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 24px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--card-shadow);
+      width: 460px;
+      height: 580px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel h2 {
+      text-align: center;
+      color: var(--accent);
+      margin-top: 0;
+      font-size: 1.3em;
+      letter-spacing: 0.5px;
+    }
+
+    label {
+      display: block;
+      margin: 8px 0 4px;
+      font-size: 0.9em;
+      color: rgb(211, 222, 233);
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #857f7f;
+      font-size: 0.95em;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 18px;
+    }
+
+    button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.95em;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    }
+
+    button:hover {
+      background: #339bff;
+      box-shadow: 0 0 14px rgba(0, 123, 255, 0.8);
+    }
+
+    .ghost {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .ghost:hover {
+      background: rgba(0, 123, 255, 0.1);
+    }
+
+    .results {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      min-height: 250px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85em;
+      padding: 20px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 1000px) {
+      main {
+        flex-direction: column;
+      }
+      .panel {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">STS</div>
+      <div>
+        <h1>Sedimentation Tank Designer</h1>
+        <div class="muted">Population-based inputs • SK-Garg style defaults</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Left Panel -->
+    <section class="panel">
+      <h2>Input Parameters</h2>
+
+      <form id="inputForm">
+        <label>Population</label>
+        <input id="population" type="number" value="20000" required />
+
+        <label>Per-capita demand (Lpcd)</label>
+        <input id="pcd" type="number" value="150" required />
+
+        <label>Sedimentation type</label>
+        <select id="process">
+          <option>Plain Sedimentation (gravity)</option>
+          <option>Coagulated / Mechanically aided</option>
+        </select>
+
+        <label>Flow pattern / Tank type</label>
+        <select id="tankType">
+          <option value="horizontal">Horizontal Flow (Rectangular)</option>
+          <option value="vertical">Vertical / Up-flow (Circular)</option>
+          <option value="radial">Radial Flow (Central feed, outward)</option>
+          <option value="peripheral">Peripheral Flow (Peripheral feed, inward)</option>
+        </select>
+
+        <div class="row">
+          <div class="col">
+            <label>Detention time (hours)</label>
+            <input id="detention" type="number" step="0.1" value="2.5" required />
+          </div>
+          <div class="col">
+            <label>Depth (m)</label>
+            <input id="depth" type="number" step="0.1" value="3.5" required />
+          </div>
+        </div>
+
+        <label>Surface Overflow Rate — SOR (L/m²/day)</label>
+        <input id="sor" type="number" step="any" value="20000" required />
+
+        <label>Preferred L:B (rectangular)</label>
+        <select id="lbratio">
+          <option value="3">3 : 1</option>
+          <option value="4" selected>4 : 1</option>
+          <option value="5">5 : 1</option>
+        </select>
+
+        <div class="controls">
+          <button id="btnCompute" type="button">Compute & Show Results</button>
+          <button id="btnReset" type="button" class="ghost">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Right Panel -->
+    <section class="panel">
+      <h2>Results</h2>
+      <div id="resultsBox" class="results">
+        <div class="muted">No calculation yet. Click <strong>Compute & Show Results</strong>.</div>
+      </div>
+
+      <div class="controls" style="margin-top:14px;">
+        <button id="btnViewDiagram" class="ghost" style="display:none">View 2D & 3D Diagram →</button>
+        <button id="btnBack" class="ghost" style="display:none" onclick="location.reload()">Back</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Design assumptions: detention, SOR and L:B follow typical water-supply design (S.K. Garg style).
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annapoorana Engineering College</title>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    color: #e6faff;
+    overflow: hidden;
+    background: linear-gradient(180deg, #000a1a 0%, #001a33 50%, #002b55 100%);
+  }
+  body::before, body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 100%, rgba(0, 170, 255, 0.15), transparent 70%),
+                repeating-radial-gradient(circle at 50% 100%, rgba(0, 128, 255, 0.3), transparent 20%);
+    animation: waterMove 5s infinite linear;
+    opacity: 0.4;
+    z-index: -1;
+  }
+  body::after {
+    animation-duration: 16s;
+    opacity: 0.25;
+  }
+  @keyframes waterMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-200px); }
+  }
+  .mu-logo-head {
+    position: relative;
+    z-index: 10;
+  }
+  .subtitle {
+    font-size: 3rem;
+    margin-top: -20px;
+    color: #b3ecff;
+    text-align: center;
+    animation: fadeIn 3s ease-in-out;
+    font-weight: 500;
+  }
+  .btn {
+    background: linear-gradient(90deg, #0040ff, #00aaff);
+    border: none;
+    padding: 15px 45px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: block;
+    margin: 30px auto;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    width: 150px;
+    z-index: 10;
+  }
+  .btn:hover {
+    transform: scale(1.1);
+  }
+ .authors {
+  position: absolute;
+  top: 550px;          /* Moves it upward */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 3s ease-in-out;
+  z-index: 10;
+}
+
+  .names {
+    display: flex;
+    gap: 50px;
+ 
+  }
+  .names span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #99eeff;
+    text-shadow: 0 0 10px #00aaff;
+    animation: zoomIn 2s ease-in-out infinite alternate;
+  }
+  @keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes zoomIn {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+  <h1 class="mu-logo-head"
+  style="
+    font-size: 4rem;
+    font-weight: 900;
+    margin-top: -300px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-image: url('image/SERVICES _ Mysite.jpeg');
+    background-size: 200% 200%;
+    background-repeat: repeat;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: shimmer 30s linear infinite;
+  ">
+    ANNAPOORANA ENGINEERING COLLEGE
+  </h1>
+
+  <div class="container" style="text-align: center;"><br><br><br>
+    <h2 class="subtitle" style="font-weight: bold;">SEDIMENTATION TANK SIMULATOR</h2><br>
+    <a href="home.html" class="btn">OPEN</a>
+  </div>
+
+  <div class="authors" style="margin-top: -50px;">
+    <div class="names" >
+      <span>ANURADHA V</span>
+      <span>DHARSHAN P</span>
+      <span>JAYASRI T</span>
+      <span>GOMATHI R</span>
+    </div><br>
+    <div class="year">CSE - Final Year (2022 - 2026)</div>
+  </div>
+</body>
+</html>

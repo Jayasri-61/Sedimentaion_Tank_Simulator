@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sedimentation Tank Designer — Results</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+
+/* Center only the bottom section */
+main.wrap.single {
+  display: flex;
+  justify-content: center;   /* Center horizontally */
+  align-items: center;       /* Center vertically */
+  min-height: 80vh;          /* Make the section fill most of the screen */
+  flex-direction: column;
+}
+
+.panel {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Buttons alignment */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Optional — style buttons */
+.controls button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.controls .ghost {
+  background: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+}
+</style>
+</head>
+<body style="text-align: center;">
+  <header>
+    <div class="brand">
+      <div class="logo">STS</div>
+      <div>
+        <h1>Calculated Results</h1>
+        <div class="muted">Review the design values — then Visualize Diagram</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap single">
+    <section class="panel">
+      <div id="results" class="results"></div>
+
+      <div class="controls" style="margin-top:14px;">
+        <button id="btnDiagram">View 2D & 3D Diagram</button>
+        <button id="btnBackToInput" class="ghost">← Back to Inputs</button>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

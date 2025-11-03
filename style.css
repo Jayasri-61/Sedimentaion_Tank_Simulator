@@ -1,0 +1,35 @@
+:root{
+  --bg1:#041f2c; --panel:#052a3a; --accent:#12b0ff; --muted:#8fb4c8; --label:#e8f8ff;
+  --card-shadow: 0 10px 30px rgba(1,18,28,0.6);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg1),#012433);color:var(--label)}
+header{padding:18px 28px;background:rgba(0,0,0,0.12);display:flex;align-items:center}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#1477ff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#012}
+h1{margin:0;font-size:20px}
+.muted{color:var(--muted);font-size:13px}
+
+.wrap{display:flex;gap:22px;padding:28px;align-items:flex-start;flex-wrap:wrap}
+.panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow:var(--card-shadow)}
+.left{width:420px}
+.right{flex:1;min-width:600px}
+.single{width:96%;max-width:1150px;margin:20px auto}
+
+h2{color:var(--accent)}
+label{display:block;color:var(--muted);font-size:13px;margin-top:10px}
+input,select{width:100%;padding:9px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:#072a36;color:var(--label);font-size:14px}
+.row{display:flex;gap:10px;margin-top:6px}
+.col{flex:1}
+.controls{display:flex;gap:10px;align-items:center}
+button{background:var(--accent);color:#022;border:none;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+.results{padding:12px;background:rgba(255,255,255,0.01);border-radius:8px;min-height:150px;color:var(--label)}
+.canvas-wrap{flex:1;min-width:300px}
+.diagram-row{display:flex;gap:12px;flex-wrap:wrap}
+.measurements{background:rgba(18,176,255,0.06);color:#063547;padding:10px;border-radius:8px;font-weight:700}
+footer{padding:18px;text-align:center;color:var(--muted)}
+.visualize-page header{background:#072a36}
+@media(max-width:1000px){ .wrap{flex-direction:column}.left,.right{width:100%} .canvas-wrap{min-width:100%} }
+
